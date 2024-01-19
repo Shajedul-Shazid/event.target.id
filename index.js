@@ -36,6 +36,7 @@ for (let product of products){
 container.innerHTML = productsHtml
 
 container.addEventListener("click", function(e){
+    document.getElementById(e.target.id).parentElement.style.backgroundColor = 'lightblue'
      console.log(e.target.id)
 })
 
