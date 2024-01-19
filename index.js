@@ -1,4 +1,5 @@
 const container = document.getElementById('container')
+const clearBtn = document.getElementById('clear-btn')
 
 const products = [
     {
@@ -36,9 +37,17 @@ for (let product of products){
 container.innerHTML = productsHtml
 
 container.addEventListener("click", function(e){
-    document.getElementById(e.target.id).parentElement.style.backgroundColor = 'lightblue'
-     console.log(e.target.id)
+    document.getElementById(e.target.id).parentElement.classList.add('purchased')
+    document.getElementById(e.target.id).parentElement.classList.remove('on-offer')
 })
 
-
+clearBtn.addEventListener('click', function(){
+        const productsArray = document.getElementsByClassName('product')
+        for (let product of productsArray){
+            product.classList.remove('purchased')
+            product.classList.add('on-offer')
+            
+        }
+    })
+    
 
